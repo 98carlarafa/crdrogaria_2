@@ -10,7 +10,7 @@
                     <th class="center-align">Medicamentos</th>
                     <th class="center-align">Quantidade</th>
                     <th class="center-align">Valor</th>
-                    <th class="center-align">Opções</th>
+                    <th class="center-align">Opção</th>
                 </tr>
             </thead>
 
@@ -20,7 +20,7 @@
                         <td class="center-align">{{$medicamento->nome}}</td>
                         <td class="center-align">{{$medicamento->quantidade}}</td>
                         <td class="center-align">{{$medicamento->valor}}</td>
-                        <td class="center-align">Excluir</td>
+                        <td class="center-align"> <a class="waves-effect waves-light red btn-small">Excluir</a></td>
                     </tr>
                 @empty
                     <tr>
