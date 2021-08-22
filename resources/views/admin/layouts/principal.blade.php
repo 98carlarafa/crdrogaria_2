@@ -20,6 +20,14 @@
         <div class="container">
             <div class="nav-wrapper">
                 <a href="/admin/medicamentos" class="brand-logo">CR DROGARIA</a>
+                <ul class="right">
+                    <li>
+                        <a href="{{route('admin.medicamentos.index')}}">Medicamentos</a>
+                    </li>
+                    <li>
+                        <a href="{{route('admin.fabricantes.index')}}">Fabricantes</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
@@ -36,6 +44,11 @@
         @if (session('sucesso'))
             M.toast({html: "{{session('sucesso')}}"});
         @endif
+
+        document.addEventListener('DOMContentLoaded', function(){
+            var elems = document.querySelectorAll('select');
+            var instances = M.FormSelect.init(elems);
+        });
     </script>
 
 

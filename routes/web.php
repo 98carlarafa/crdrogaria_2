@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Admin\MedicamentoController;
+use App\Http\Controllers\Admin\FabricanteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,12 +20,7 @@ Route::redirect('/', '/admin/medicamentos');
 
 Route::prefix('admin')->name('admin.')->group(function(){
 
-    Route::get('medicamentos', [MedicamentoController::class, 'medicamentos'])->name('medicamentos.listar');
-    Route::get('medicamentos/salvar', [MedicamentoController::class, 'formAdicionar'])->name('medicamentos.form');
-    Route::post('medicamentos/salvar', [MedicamentoController::class, 'adicionar'])->name('medicamentos.adicionar');
+    Route::resource('medicamentos', MedicamentoController::class);
+    Route::resource('fabricantes', FabricanteController::class)->except(['show']);
 });
 
-// Route::get('/sobre', function () {
-//     return '<h1>Sobre</h1>';
-
-// });
